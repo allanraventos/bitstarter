@@ -87,9 +87,9 @@ if(require.main == module) {
     if (program.url) {
         rest.get(program.url).on('complete', function(result) {
           
-          var checkJson = checkUrl(result, program.checks);
-          //fs.writeFileSync("myfile.html", result);
-          //var checkJson = checkHtmlFile("myfile.html", program.checks);
+          //var checkJson = checkUrl(result, program.checks);
+          fs.writeFileSync("myfile.html", result);
+          var checkJson = checkHtmlFile("myfile.html", program.checks);
           var outJson = JSON.stringify(checkJson, null, 4);
           console.log(outJson);
     });
